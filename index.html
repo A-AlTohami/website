@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ahmed Al Tohami — Defense Intelligence</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="grid-overlay"></div>
+<canvas id="particles"></canvas>
+<canvas id="radar-canvas"></canvas>
+
+<!-- FLOATING FIGURE (fixed, fades on scroll) -->
+<div id="figure-wrap">
+  <div class="fig-corner tl"></div>
+  <div class="fig-corner tr"></div>
+  <div class="fig-corner bl"></div>
+  <div class="fig-corner br"></div>
+  <div class="fig-hud">
+    ID: AL-TOHAMI<br>
+    CLEARANCE: STRATEGIC<br>
+    LOCATION: ABU DHABI<br>
+    STATUS: ACTIVE
+  </div>
+  <img id="figure-img" src="figure.png" alt="Ahmed Al Tohami"/>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">// AL-TOHAMI</div>
+  <ul class="nav-links">
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#articles">Intel Reports</a></li>
+    <li><a href="#experience">Record</a></li>
+    <li><a href="#skills">Arsenal</a></li>
+    <li><a href="#contact">Connect</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-coords">24°28'N &nbsp;54°22'E</div>
+    <div class="nav-status"><span class="pulse-dot"></span>ACTIVE — ABU DHABI</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hud-bar">CLASSIFIED PROFILE // ACCESS GRANTED // SECTOR: DEFENSE INTELLIGENCE</div>
+  <div class="hero-eyebrow">Defense Data &amp; Intelligence Analyst</div>
+  <h1 class="hero-name">Ahmed<br><span class="accent">Al Tohami</span></h1>
+  <div class="hero-title">Defense Data &amp; Contracts Expert &nbsp;·&nbsp; UAE Armed Forces &nbsp;·&nbsp; 20+ Years</div>
+  <p class="hero-bio">
+    Certified Defense Data &amp; Research Analyst with <strong>PMP studies</strong> and over two decades transforming complex military and contract datasets into <strong>actionable intelligence</strong>. Driving procurement excellence, mission readiness, and strategic defense decisions across the MENA region.
+  </p>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-number">20+</span>
+      <span class="stat-label">Years in Defense</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">$10M+</span>
+      <span class="stat-label">Procurement Managed</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">50+</span>
+      <span class="stat-label">Reports Published</span>
+    </div>
+  </div>
+  <div class="hero-ctas">
+    <a href="#articles" class="btn-primary">↓ Intel Reports</a>
+    <a href="#contact" class="btn-secondary">Establish Contact</a>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="section-header reveal">
+    <div class="section-tag">Domain</div>
+    <h2 class="section-title">Core Expertise</h2>
+  </div>
+  <div class="expertise-grid reveal">
+    <div class="expertise-card">
+      <div class="exp-code">CAP-01</div>
+      <span class="exp-icon">🛡️</span>
+      <div class="exp-title">Defense Procurement</div>
+      <p class="exp-desc">Led $10M+ procurement projects across UAE Armed Forces. Deep expertise in GCC defense contracting, regulatory compliance, and vendor intelligence.</p>
+    </div>
+    <div class="expertise-card">
+      <div class="exp-code">CAP-02</div>
+      <span class="exp-icon">📊</span>
+      <div class="exp-title">Data &amp; Intelligence</div>
+      <p class="exp-desc">Converting raw military and contract datasets into command-level insights. Specialist in asset lifecycle visibility and reporting systems for strategic decision-making.</p>
+    </div>
+    <div class="expertise-card">
+      <div class="exp-code">CAP-03</div>
+      <span class="exp-icon">🤖</span>
+      <div class="exp-title">AI &amp; Autonomous Systems</div>
+      <p class="exp-desc">Tracking drone warfare, autonomous systems, robotics, and counter-UAS technologies shaping the future battlefield. Integrating AI into defense operations.</p>
+    </div>
+    <div class="expertise-card">
+      <div class="exp-code">CAP-04</div>
+      <span class="exp-icon">🔐</span>
+      <div class="exp-title">Cyber &amp; C-UAS</div>
+      <p class="exp-desc">Researching cyber threat actors, IAMD frameworks, counter-drone systems, and electronic warfare countermeasures for layered defense architectures.</p>
+    </div>
+    <div class="expertise-card">
+      <div class="exp-code">CAP-05</div>
+      <span class="exp-icon">🌐</span>
+      <div class="exp-title">MENA Defense Markets</div>
+      <p class="exp-desc">Strategic analysis of GCC defense industry. Coverage of IDEX, NAVDEX, UMEX — the key gateways to regional arms and technology procurement.</p>
+    </div>
+    <div class="expertise-card">
+      <div class="exp-code">CAP-06</div>
+      <span class="exp-icon">📋</span>
+      <div class="exp-title">Operational Research</div>
+      <p class="exp-desc">PMP methodology applied to complex multi-stakeholder defense programs. Translating operational requirements into auditable procurement intelligence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section id="articles">
+  <div class="section-header reveal">
+    <div class="section-tag">Writing</div>
+    <h2 class="section-title">Intelligence Reports</h2>
+  </div>
+  <div class="articles-filter reveal">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="drone">Drones &amp; UAS</button>
+    <button class="filter-btn" data-filter="cyber">Cyber</button>
+    <button class="filter-btn" data-filter="ai">AI &amp; Tech</button>
+    <button class="filter-btn" data-filter="defense">Defense Markets</button>
+    <button class="filter-btn" data-filter="intel">Intel Analysis</button>
+  </div>
+  <div class="articles-grid reveal" id="articles-grid">
+    <a class="article-card" data-cat="drone" href="https://www.linkedin.com/pulse/curtain-call-swarm-guards-ahmed-al-tohami-g2kpf" target="_blank" rel="noopener"><span class="article-tag tag-drone">Drones &amp; UAS</span><div class="article-title">CURTAIN CALL: The Swarm That Guards the Swarm</div><p class="article-excerpt">Autonomous swarm defense architectures and how drone-on-drone interception is reshaping air defense doctrine.</p></a>
+    <a class="article-card" data-cat="drone" href="https://www.linkedin.com/pulse/rethinking-uae-air-defense-after-1000-drone-barrage-ahmed-al-tohami-p7jbf" target="_blank" rel="noopener"><span class="article-tag tag-drone">Drones &amp; UAS</span><div class="article-title">Rethinking UAE Air Defense After the 1,000-Drone Barrage</div><p class="article-excerpt">Strategic reassessment of UAE layered air defense in the wake of mass drone saturation attack scenarios.</p></a>
+    <a class="article-card" data-cat="intel" href="https://www.linkedin.com/pulse/invisible-hand-inside-palantirs-war-machine-ahmed-al-tohami-qlmuf" target="_blank" rel="noopener"><span class="article-tag tag-intel">Intel Analysis</span><div class="article-title">The Invisible Hand: Inside Palantir's War Machine</div><p class="article-excerpt">A deep dive into Palantir's defense AI platforms and how they reshape intelligence fusion on the modern battlefield.</p></a>
+    <a class="article-card" data-cat="drone" href="https://www.linkedin.com/pulse/tale-two-drones-how-iran-turkey-redefined-modern-warfare-al-tohami" target="_blank" rel="noopener"><span class="article-tag tag-drone">Drones &amp; UAS</span><div class="article-title">The Tale of Two Drones: How Iran and Turkey Redefined Modern Warfare</div><p class="article-excerpt">Comparative operational analysis of Iranian and Turkish drone programs and their diverging strategic doctrines.</p></a>
+    <a class="article-card" data-cat="cyber" href="https://www.linkedin.com/pulse/unmasking-apt35-charming-kitten-staying-ahead-cyber-espionage-tohami" target="_blank" rel="noopener"><span class="article-tag tag-cyber">Cyber</span><div class="article-title">Unmasking APT35 (Charming Kitten): Staying Ahead of Sophisticated Cyber Espionage</div><p class="article-excerpt">Threat actor profile and countermeasure framework for Iran's most prolific state-sponsored hacking group.</p></a>
+    <a class="article-card" data-cat="defense" href="https://www.linkedin.com/pulse/winning-defense-contracts-gcc-strategic-pathways-industry-al-tohami" target="_blank" rel="noopener"><span class="article-tag tag-defense">Defense Markets</span><div class="article-title">Winning Defense Contracts in the GCC: Strategic Pathways for Industry</div><p class="article-excerpt">Navigating GCC procurement ecosystems, offset requirements, and relationship-based contracting culture.</p></a>
+    <a class="article-card" data-cat="ai" href="https://www.linkedin.com/pulse/superhuman-mirage-why-andrurils-eagleeye-might-revolution-al-tohami" target="_blank" rel="noopener"><span class="article-tag tag-ai">AI &amp; Tech</span><div class="article-title">The Superhuman Mirage: Why Anduril's EagleEye Might Not Be the Revolution We Think</div><p class="article-excerpt">Critical analysis of AI battlefield vision systems — separating genuine capability advances from hyperbole.</p></a>
+    <a class="article-card" data-cat="drone" href="https://www.linkedin.com/pulse/soft-kill-hard-race-layered-counter-uas-defense-ahmed-al-tohami" target="_blank" rel="noopener"><span class="article-tag tag-drone">Drones &amp; UAS</span><div class="article-title">Soft Kill, Hard Kill: The Race for Layered Counter-UAS Defense</div><p class="article-excerpt">Comparative review of electronic warfare, kinetic, and directed energy solutions for defeating hostile drone threats.</p></a>
+    <a class="article-card" data-cat="intel" href="https://www.linkedin.com/pulse/iamd-vs-c-uas-evolving-defensive-frameworks-ahmed-al-tohami" target="_blank" rel="noopener"><span class="article-tag tag-intel">Intel Analysis</span><div class="article-title">IAMD vs C-UAS: Evolving Defensive Frameworks</div><p class="article-excerpt">Doctrinal tension between Integrated Air &amp; Missile Defense and dedicated counter-drone architectures.</p></a>
+    <a class="article-card" data-cat="defense" href="https://www.linkedin.com/pulse/umex-2026-glimpse-future-autonomy-ahmed-al-tohami" target="_blank" rel="noopener"><span class="article-tag tag-defense">Defense Markets</span><div class="article-title">UMEX 2026: A Glimpse into the Future of Autonomy</div><p class="article-excerpt">On-the-ground coverage from Abu Dhabi's UMEX 2026 — the definitive show for unmanned systems in the Middle East.</p></a>
+    <a class="article-card" data-cat="ai" href="https://www.linkedin.com/pulse/multi-modal-robotics-military-civil-defense-operations-al-tohami" target="_blank" rel="noopener"><span class="article-tag tag-ai">AI &amp; Tech</span><div class="article-title">Multi-Modal Robotics for Military &amp; Civil Defense Operations</div><p class="article-excerpt">Legged robots, wheeled platforms, and aerial drones converging into integrated autonomous defense systems.</p></a>
+    <a class="article-card" data-cat="intel" href="https://www.linkedin.com/pulse/chinas-shadow-fleet-fishing-boats-drone-ships-reshaping-al-tohami" target="_blank" rel="noopener"><span class="article-tag tag-intel">Intel Analysis</span><div class="article-title">China's Shadow Fleet: Fishing Boats and Drone Ships</div><p class="article-excerpt">Maritime gray zone operations and China's dual-use civilian fleet as a strategic military instrument.</p></a>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <div class="section-tag">Career</div>
+    <h2 class="section-title">Service Record</h2>
+  </div>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-date">Present</div>
+      <div class="timeline-role">Defense Data &amp; Contracts Expert</div>
+      <div class="timeline-org">UAE Armed Forces — Abu Dhabi, UAE</div>
+      <p class="timeline-desc">Driving data intelligence and procurement insights across the UAE Armed Forces. Managing $10M+ procurement projects and designing reporting systems that support command-level strategic decisions. Integrating AI and data analytics into the next era of operational efficiency for the MENA region.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">20+ Years</div>
+      <div class="timeline-role">Certified Defense Data &amp; Research Analyst</div>
+      <div class="timeline-org">Armed Forces — United Arab Emirates</div>
+      <p class="timeline-desc">Two decades transforming complex military and contract datasets into actionable insights. Specialist in regulatory compliance, strategic defense procurement, operational research, and military data systems. PMP studies applied across multi-stakeholder defense programs.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Ongoing</div>
+      <div class="timeline-role">Defense Intelligence Writer &amp; Analyst</div>
+      <div class="timeline-org">LinkedIn — 50+ Published Articles</div>
+      <p class="timeline-desc">Publishing weekly intelligence reports on drone warfare, counter-UAS systems, AI in defense, cyber threats, and MENA defense markets. Creator of the "Zombieland" weekly defense digest and the "Curtain Call" autonomous warfare series.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header reveal">
+    <div class="section-tag">Capabilities</div>
+    <h2 class="section-title">Technical Arsenal</h2>
+  </div>
+  <div class="skills-grid reveal" id="skills-grid">
+    <div class="skill-bar"><div class="skill-name">Defense Procurement</div><div class="skill-level">Expert</div></div>
+    <div class="skill-bar"><div class="skill-name">Data Analytics</div><div class="skill-level">Expert</div></div>
+    <div class="skill-bar"><div class="skill-name">Military Intelligence</div><div class="skill-level">Expert</div></div>
+    <div class="skill-bar"><div class="skill-name">Contract Management</div><div class="skill-level">Expert</div></div>
+    <div class="skill-bar"><div class="skill-name">UAS &amp; Counter-UAS</div><div class="skill-level">Advanced</div></div>
+    <div class="skill-bar"><div class="skill-name">AI &amp; Defense Tech</div><div class="skill-level">Advanced</div></div>
+    <div class="skill-bar"><div class="skill-name">Cyber Intelligence</div><div class="skill-level">Advanced</div></div>
+    <div class="skill-bar"><div class="skill-name">Project Management</div><div class="skill-level">Advanced</div></div>
+    <div class="skill-bar"><div class="skill-name">MENA Defense Markets</div><div class="skill-level">Expert</div></div>
+    <div class="skill-bar"><div class="skill-name">Research &amp; Analysis</div><div class="skill-level">Advanced</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal">
+    <div class="section-tag">Connect</div>
+    <h2 class="section-title">Establish Contact</h2>
+  </div>
+  <div class="contact-layout reveal">
+    <div>
+      <p class="contact-intro">Based in Abu Dhabi, working at the intersection of defense intelligence, data analytics, and emerging technologies. Open to collaboration, consulting, and speaking engagements across the MENA region.</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/al-tohami/" target="_blank" class="contact-link">
+          <span>🔗</span><span>LinkedIn Profile</span><span>↗</span>
+        </a>
+        <a href="https://www.linkedin.com/in/al-tohami/recent-activity/all/" target="_blank" class="contact-link">
+          <span>📰</span><span>Intelligence Articles</span><span>↗</span>
+        </a>
+        <a href="#" class="contact-link">
+          <span>📍</span><span>Abu Dhabi, UAE &nbsp;·&nbsp; 24°28'N 54°22'E</span><span>—</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form">
+      <input id="cf-name" type="text" placeholder="Full Name"/>
+      <input id="cf-email" type="email" placeholder="Your Email Address"/>
+      <input id="cf-subject" type="text" placeholder="Subject / Organization"/>
+      <textarea id="cf-message" placeholder="Your message..."></textarea>
+      <button type="button" onclick="sendContact()">→ Transmit Message</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">// AHMED AL TOHAMI — DEFENSE INTELLIGENCE — ABU DHABI</div>
+  <div class="copy">© 2026 &nbsp;·&nbsp; ALL RIGHTS RESERVED</div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
